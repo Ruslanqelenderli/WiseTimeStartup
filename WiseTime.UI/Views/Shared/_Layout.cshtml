@@ -1,0 +1,235 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <title>WiseTime | Xoş gəlmisiniz</title>
+    <!--== Required meta tags  ==-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="~/Manage/img/logo.png" type="image/x-icon">
+    <!--== Google fonts link  ==-->
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp"
+          rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Istok+Web&display=swap" rel="stylesheet">
+
+
+    <!--== Font awesome links  ==-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" />
+
+    <!--== Bootstrap CSS ==-->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <!--== CSS fayls  ==-->
+    <link rel="stylesheet" href="~/Manage/css/style.css">
+
+</head>
+
+<body>
+    <a name="goback"></a>
+
+    <!--==  meniu-navbar start ==-->
+    <section id="meniu-bar" class="sticky-menu">
+        <div class="meniu-nav">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="~/Manage/img/logo.png" alt="">
+                    <span>WiseTime</span>
+                </a>
+            </div>
+
+            <div class="meniu-item">
+                <ul>
+                    <li>
+                        <a href="/" class="menu-list-to" data-title="Əsas səhifə">
+                            <span data-title="Əsas səhifə">Əsas səhifə</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!" class="menu-list-to" data-title="Imtahan">
+                            <span data-title="Imtahan">Imtahan</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="#!" class="menu-list-to" data-title="Bakalavr">
+                                    <span data-title="Bakalavr">Bakalavr</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="menu-list-to" data-title="Magistratura">
+                                    <span data-title="Magistratura">Magistratura</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="menu-list-to" data-title="Doktorantura">
+                                    <span data-title="Doktorantura">Doktorantura</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="menu-list-to" data-title="Müəllim">
+                                    <span data-title="Müəllim">Müəllim</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./about.html" class="menu-list-to" data-title="Haqqımızda">
+                            <span data-title="Haqqımızda">Haqqımızda</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!" class="menu-list-to" data-title="Təqvim">
+                            <span data-title="Təqvim">Təqvim</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./contact.html" class="menu-list-to" data-title="Əlaqə">
+                            <span data-title="Əlaqə">Əlaqə</span>
+                        </a>
+                    </li>
+                    <li class="menu-search">
+                        <i class="material-icons md-22 header-search-ico-search">search</i>
+                        <input type="search" name="search" id="search" placeholder="Axtar...">
+                    </li>
+                    <li>
+                        <a href="#!" class="menu-list-to menu-profil" data-title="Profil">
+                            <span data-title="Profil">Profil</span>
+                            <i class="fas fa-user-circle"></i>
+                        </a>
+                        <ul class="profile-ul">
+                            <li>
+                                <a href="#!" class="menu-list-to" data-title="Tənzimləmələr">
+                                    <span data-title="Tənzimləmələr">Tənzimləmələr</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="menu-list-to" data-title="Yardım">
+                                    <span data-title="Yardım">Yardım</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="menu-list-to" data-title="Çıxış">
+                                    <span data-title="Çıxış">Çıxış</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--== meniu-navbar end ==-->
+    <!-- News section start -->
+    @RenderBody()
+    <!-- News section end -->
+    <!-- footer section start -->
+    <section id="footer">
+        <div class="container section-padding">
+            <div class="row">
+                <div class="col-6">
+                    <div class="footer-item">
+                        <div class="logo">
+                            <a href="./index.html">
+                                <img src="~/Manage/img/logo.png" alt="LOGO PathSoft">
+                                <span><b>WiseTime</b></span>
+                            </a>
+                        </div>
+                        <div class="company-info">
+                            <p>
+                                2012-ci ildə fəaliyyətə başlayan WiseTime yüksək texnologiyalar sahəsində təcrübəli
+                                mütəxəssislər hazırlayan tədris müəssisəsidir.2012-ci ildə fəaliyyətə başlayan WiseTime yüksək texnologiyalar sahəsində təcrübəli
+                                mütəxəssislər hazırlayan tədris müəssisəsidir.
+                            </p>
+                        </div>
+                        <div class="company-sosial-media">
+                            <a href="https://www.facebook.com/">
+                                <div class="company-sosial-icon"><i class="fab fa-facebook-f"></i></div>
+                            </a>
+                            <a href="http://www.instagram.com/">
+                                <div class="company-sosial-icon"><i class="fab fa-instagram"></i></div>
+                            </a>
+                            <a href="http://www.linkedin.com">
+                                <div class="company-sosial-icon"><i class="fab fa-linkedin-in"></i></div>
+                            </a>
+                            <a href="http://www.twitter.com">
+                                <div class="company-sosial-icon"><i class="fab fa-twitter"></i></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                    <div class="company-contacts">
+                        <h4>Əlaqə vasitələri</h4>
+                        <div class="company-contacts-item">
+                            <ul class="footer-contact">
+                                <li class="d-flex">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div class="footer-contact-info">301 S Irving Blvd Los Angeles, CA 90020</div>
+                                </li>
+                                <li class="d-flex">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <div class="footer-contact-info">
+                                        <a href="tel:+1 323-913-4688">+1 323-913-4688</a>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <div class="footer-contact-info">
+                                        <a href="tel:+1 323-888-4554"> +1 323-888-4554</a>
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <i class="fas fa-envelope"></i>
+                                    <div class="footer-contact-info">
+                                        <a href="mailto:mail@example.com">wisetime@mail.com</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer section end -->
+    <!-- footer Copyright start -->
+    <section id="copyright">
+        <div class="container copyright-padding">
+            <div class="row">
+                <div class="col-12">
+                    <div class="copyright-item">
+                        <div class="footer-links">
+                            <a href="#!"><span class="conditions">Terms and Conditions</span> </a>
+                            <a href="#!"><span class="privacy">Privacy Policy</span></a>
+                        </div>
+                        <div class="copyright-text">&#169 2022 WiseTime. All rights reserved.</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer Copyright end -->
+
+    <a href="#goback" class="goback">
+        <i class="material-icons"> east</i>
+    </a>
+    <!--== Optional JavaScript ==-->
+    <!--== jQuery first, then Popper.js, then Bootstrap JS ==-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</body>

@@ -1,0 +1,17 @@
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.Business\bin\Debug\net5.0\WiseTime.Business.deps.json
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.Business\bin\Debug\net5.0\WiseTime.Business.dll
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.Business\bin\Debug\net5.0\ref\WiseTime.Business.dll
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.Business\bin\Debug\net5.0\WiseTime.Business.pdb
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.Business\bin\Debug\net5.0\WiseTime.Entity.dll
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.Business\bin\Debug\net5.0\WiseTime.Entity.pdb
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.Business\obj\Debug\net5.0\WiseTime.Business.csproj.AssemblyReference.cache
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.Business\obj\Debug\net5.0\WiseTime.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.Business\obj\Debug\net5.0\WiseTime.Business.AssemblyInfoInputs.cache
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.Business\obj\Debug\net5.0\WiseTime.Business.AssemblyInfo.cs
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.Business\obj\Debug\net5.0\WiseTime.Business.csproj.CoreCompileInputs.cache
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.Business\obj\Debug\net5.0\WiseTime.Business.csproj.CopyComplete
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.Business\obj\Debug\net5.0\WiseTime.Business.dll
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.Business\obj\Debug\net5.0\ref\WiseTime.Business.dll
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.Business\obj\Debug\net5.0\WiseTime.Business.pdb
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.Business\bin\Debug\net5.0\WiseTime.Data.dll
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.Business\bin\Debug\net5.0\WiseTime.Data.pdb

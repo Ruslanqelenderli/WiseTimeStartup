@@ -1,0 +1,112 @@
+﻿@{ 
+    Layout = null;
+}
+@model WiseTime.UI.ViewModels.LoginViewModel
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+        <link rel="shortcut icon" href="~/Manage/img/logo.png" type="image/x-icon">
+        <!--======= CSS file links =======-->
+        <link rel="stylesheet" href="~/Manage/css/login.css" />
+
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>WiseTime | İstifadəçi girişi</title>
+    </head>
+
+    <body>
+        @if (ViewBag.EmailConfrmed != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                @ViewBag.EmailConfrmed
+
+            </div>
+            ViewBag.EmailConfrmed = null;
+        }else if (TempData["EmailForResetPassword"] != null)
+        {
+        <div class="alert alert-danger" role="alert">
+            @TempData["EmailForResetPassword"]
+
+        </div>
+            TempData["EmailForResetPassword"] = null;
+        }
+        else if (TempData["ResetPassword"] != null)
+        {
+        <div class="alert alert-danger" role="alert">
+            @TempData["ResetPassword"]
+
+        </div>
+            TempData["ResetPassword"] = null;
+        }
+        <div class="container-login container-sign-in">
+            <div class="login-forms-container">
+                <div class="signin-signup">
+
+                    <!--========= Sign In Form Start==========-->
+                    <form asp-action="Login" asp-controller="Account" class="sign-in-form">
+                        <h2 class="title">İstifadəçi girişi</h2>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <!--====== Sign In Input Start =======-->
+                        <div class="login-input-field">
+                            <i class="fas fa-envelope"></i>
+                            <input asp-for="Email" type="email" placeholder="Email" />
+                            <span asp-validation-for="Email" class="login-text-danger"></span>
+                        </div>
+                        <div class="login-input-field">
+                            <i class="fas fa-lock"></i>
+                            <input asp-for="Password" type="password" placeholder="Şifrə" />
+                            <span asp-validation-for="Password" class="login-text-danger"></span>
+                            @Html.ValidationMessage("Password", "", new { @class = "login-text-danger" })
+                        </div>
+                        <input type="submit" value="Daxil ol" class="solid" />
+                        <!--====== Sign In Input end =======-->
+
+                        <a href="/Account/SendEmailForPassword" class="reset">Şifrəni unutmusan?</a>
+                        <!--====== Sign in with social platforms Start =======-->
+                        <p class="login-social-text">Və ya Sosial platformalarla daxil olun</p>
+                        <div class="login-social-media">
+                            <a href="#!" class="login-social-icon">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#!" class="login-social-icon">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#!" class="login-social-icon">
+                                <i class="fab fa-google"></i>
+                            </a>
+                            <a href="#!" class="login-social-icon">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                        <!--====== Sign in with social platforms end =======-->
+                    </form>
+                    <!--========= Sign In Form End==========-->
+
+                </div>
+            </div>
+
+            <div class="login-panels-container">
+                <!-- Sing In Content -->
+                <div class="panel left-panel">
+                    <div class="content">
+                        <h3>Yenisən ?</h3>
+                        <p>Elə isə aşağıdakı "Qeydiyyat" düyməsinə toxun, qeydiyyatdan keç və saytdan istifadə et!</p>
+                        <a href="/Account/Register">
+                            <button class="solid transparent" id="sign-up-btn"> Qeydiyyat </button>
+                        </a>
+                    </div>
+                    <img src="~/Manage/img/logo.png" class="image" alt="Logo" />
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+
+</html>

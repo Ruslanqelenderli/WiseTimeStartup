@@ -1,0 +1,203 @@
+﻿@{
+    Layout = "_Layout";
+}
+@model WiseTime.UI.Areas.Admin.ViewModels.PostViewModels.AddPostViewModel
+@if (ViewBag.Added != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.Added
+
+    </div>
+    ViewBag.Added = null;
+}
+else if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.Error
+
+    </div>
+    ViewBag.Error = null;
+}
+else if (TempData["DeletePost"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["DeletePost"]
+
+    </div>
+    TempData["DeletePost"] = null;
+}
+<div class="wrapper wrapper-content  animated fadeInRight blog">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5><small> Yeni xəbər əlavə et.</small></h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <form asp-action="Add" asp-controller="Blog" method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <!--====== Title input =======-->
+                        <div class="form-group  row">
+                            <div class="col-sm-12">
+                                <label class="col-form-label">Post Başlığı</label>
+                                <input asp-for="Title" type="text" class="form-control">
+                                <span asp-validation-for="Title" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <!--====== Text input =======-->
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group  row">
+                            <div class="col-sm-12">
+                                <label class="col-form-label">Post Məzmunu</label>
+                                <textarea asp-for="Content" class="form-control" cols="30" rows="6"></textarea>
+                                <span asp-validation-for="Content" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <!--====== TumbnailImage input =======-->
+                        <div class="hr-line-dashed"></div>
+                        <div class="custom-file">
+                            <label class="mg-bott">Profil Şəkli</label>
+                            <input type="file" asp-for="TumbnailImage" id="TumbnailImage" accept="image/*" class="form-control my-2">
+                            <span asp-validation-for="TumbnailImage" class="text-danger"></span>
+                            @Html.ValidationMessage("TumbnailImageNull", "", new { @class = "text-danger" })
+                        </div>
+
+                        <!--====== Image input =======-->
+                        <div class="hr-line-dashed"></div>
+                        <div class="custom-file">
+                            <label class="mg-bott">Post Şəkli</label>
+                            <input asp-for="Image" type="file" id="Image" accept="image/*" class="form-control my-2">
+                            <span asp-validation-for="Image" class="text-danger"></span>
+                            @Html.ValidationMessage("ImageNull", "", new { @class = "text-danger" })
+                        </div>
+
+
+                        <!--====== Checkboxes and radios input =======-->
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group row align-items-baseline">
+                            <label class="col-sm-2 col-form-label">Post Status</label>
+                            <div class="col-sm-3">
+                                <div>
+                                    <label class="mg-bott"> <input asp-for="Status" type="checkbox">Aktivdir</label>
+                                    <br />
+                                    <span class="text-success">Bu düymə bu xəbərin saytda göstərilməsini təmin edir.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--====== Select input =======-->
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <label class="col-form-label">Post Kateqoriya</label>
+                                <select asp-for="CategoryId" class="form-control m-b">
+                                    <option value="0">Kateqoriya seç...</option>
+                                    @foreach (var item in ViewBag.Categories)
+                                    {
+                                        <option value="@item.Id">@item.Name</option>
+                                    }
+                                </select>
+                                <span asp-validation-for="CategoryId" class="text-danger"></span>
+                                @Html.ValidationMessage("Category", "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <!--====== Save and Cancel =======-->
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group row">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <button class="btn btn-primary btn-sm" type="submit">Add Post</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>Blog News detail</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <table class="footable table table-stripped toggle-arrow-tiny">
+                        <thead>
+                            <tr>
+                                <th data-toggle="true">Post Title</th>
+                                <th>Status</th>
+                                <th>Kateqoriya</th>
+                                <th>Post Content</th>
+                                <th>Profil Şəkli</th>
+                                <th>Post Şəkli</th>
+                                <th>Yaradılma tarixi</th>
+                                <th>Dəyişdirilmə tarixi</th>
+                                <th>Əməliyyatlar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in ViewBag.Posts)
+                            {
+                                <tr>
+                                    <td>@item.Title</td>
+                                    <td>@item.Status</td>
+                                    @foreach (var category in ViewBag.Categories)
+                                    {
+                                        if (category.Id == item.CategoryId)
+                                        {
+                                            <td>@category.Name</td>
+                                            break;
+                                        }
+                                    }
+
+                                    <td>@item.Content</td>
+                                    <td><img style=" height: 100px; width: 140px; " src="/Images/TumbnailImage/@item.TumbnailImage" alt="Alternate Text" /></td>
+                                    <td><img style="height: 100px; width: 140px; " src="/Images/Image/@item.Image" alt="Alternate Text" /></td>
+                                    <td>@item.CreateDate.ToString("mm-dd-yyyy")</td>
+                                    <td>-</td>
+                                    <td class="d-flex justify-content-between">
+                                        <a href="/Admin/Blog/Remove/@item.Id" onclick="return confirm('Silmək istəyirsiniz?');" class="#!">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                        <a class="#!">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                        <a href="/Admin/Blog/Details/@item.Id" class="#!">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </td>
+
+                                </tr>
+                            }
+
+
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5">
+                                    <ul class="pagination float-right"></ul>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
