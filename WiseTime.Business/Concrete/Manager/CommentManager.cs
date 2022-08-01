@@ -71,10 +71,9 @@ namespace WiseTime.Business.Concrete.Manager
             return result;
         }
 
-        public async Task<BusinessReturnResult<CommentDto>> Remove(CommentDto model)
+        public async Task<BusinessReturnResult<CommentDto>> GetByPostId(int id)
         {
-            var data = mapper.Map<Comment>(model);
-            var returnresult = await commentRepository.Remove(data);
+            var returnresult = await commentRepository.FindByCondition(x => x.PostId == id);
             var result = mapper.Map<BusinessReturnResult<CommentDto>>(returnresult);
             if (returnresult.Result)
             {
@@ -83,5 +82,20 @@ namespace WiseTime.Business.Concrete.Manager
             }
             return result;
         }
+
+        public async Task<BusinessReturnResult<CommentDto>> Remove(int id)
+        {
+            var comment = await commentRepository.FindByCondition(x => x.Id == id);
+            var returnresult = await commentRepository.Remove(comment.List.FirstOrDefault());
+            var result = mapper.Map<BusinessReturnResult<CommentDto>>(returnresult);
+            if (returnresult.Result)
+            {
+
+                return result;
+            }
+            return result;
+        }
+
+        
     }
 }

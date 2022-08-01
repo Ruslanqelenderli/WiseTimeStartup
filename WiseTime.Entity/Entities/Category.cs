@@ -14,6 +14,7 @@ namespace WiseTime.Entity.Entities
         public string Name { get; set; }
         public string Description { get; set; }
         public bool Status { get; set; }
+        public DateTime CreateDate { get; set; }
 
         public ICollection<Post> Posts { get; set; }
     }

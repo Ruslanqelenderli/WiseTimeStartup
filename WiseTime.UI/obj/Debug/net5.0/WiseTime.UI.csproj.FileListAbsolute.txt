@@ -388,7 +388,6 @@ C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Raz
 C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Views\Account\ResetPassword.cshtml.g.cs
 C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Views\Account\SendEmailForPassword.cshtml.g.cs
 C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Views\Email\ConfirmEmail.cshtml.g.cs
-C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Views\Home\Blog.cshtml.g.cs
 C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Views\Shared\Components\Login\Default.cshtml.g.cs
 C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Views\Shared\Components\Register\Default.cshtml.g.cs
@@ -453,3 +452,6 @@ C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Raz
 C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
 C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Blog\Add.cshtml.g.cs
 C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Blog\Details.cshtml.g.cs
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Blog\Edit.cshtml.g.cs
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Add.cshtml.g.cs
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Edit.cshtml.g.cs

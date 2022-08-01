@@ -43,7 +43,7 @@ namespace WiseTime.UI.Controllers
         {
             if(ModelState.IsValid)
             {
-                var urluser = "http://localhost:12195/api/User";
+                var urluser = "http://localhost:57630/api/User";
                 var users = await Api.Api<UserDto>.GetAsync(urluser);
 
                 if (users != null)
@@ -104,7 +104,7 @@ namespace WiseTime.UI.Controllers
                     
                         dto.Image = "image";
                         dto.EmailConfirmed = false;
-                        var urluser = "http://localhost:12195/api/User";
+                        var urluser = "http://localhost:57630/api/User";
 
 
                         var users = await Api.Api<UserDto>.GetAsync(urluser);
@@ -205,7 +205,7 @@ namespace WiseTime.UI.Controllers
             var returnResult = await userprojectService.GetByEmail(email);
             var dto = returnResult.List.FirstOrDefault();
             dto.PasswordHash = viewModel.Password;
-            var urluser = "http://localhost:12195/api/User";
+            var urluser = "http://localhost:57630/api/User";
             var json = JsonConvert.SerializeObject(dto);
 
             var response = await Api.Api<UserDto>.PutAsync(urluser, json);

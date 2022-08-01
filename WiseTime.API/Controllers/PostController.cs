@@ -90,7 +90,7 @@ namespace WiseTime.API.Controllers
         public async Task<IActionResult> Delete(int id)
         {
 
-            var result = await postService.RemoveById(id);
+            var result = await postService.Remove(id);
             if (result.Result)
             {
                 return Ok();

@@ -9,6 +9,7 @@ namespace WiseTime.Business.DTOs
 {
     public class UserDto
     {
+        public int Id { get; set; }
         [Required(ErrorMessage ="Ad Daxil edin.")]
         [MinLength(3,ErrorMessage ="Ad 2 hərfdən çox olmalıdır.")]
         [MaxLength(50,ErrorMessage ="Ad 50 hərfdən az olmalıdır.")]

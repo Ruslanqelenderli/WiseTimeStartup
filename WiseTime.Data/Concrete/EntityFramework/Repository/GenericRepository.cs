@@ -46,7 +46,7 @@ namespace WiseTime.Data.Concrete.EntityFramework.Repository
             var result = new TReturnResult();
             try
             {
-
+                
 
                 using (var tcontext = new TContext())
                 {

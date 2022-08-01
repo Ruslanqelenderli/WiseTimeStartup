@@ -11,6 +11,5 @@ namespace WiseTime.Business.Abstract
 {
     public interface IPostService:IGenericService<PostDto,BusinessReturnResult<PostDto>>
     {
-        Task<BusinessReturnResult<PostDto>> RemoveById(int id);
     }
 }

@@ -11,144 +11,39 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-4 newsbox">
-                <div class="news-item">
-                    <a href="#" class="news-img">
-                        <img src="https://www.ekaryera.az/adminpage/uploads/1637606288uxdizayn.jpeg" alt="">
-                    </a>
-                    <div class="news-info">
-                        <div class="news-day">
-                            <p>07/01/2020</p>
-                        </div>
-                        <div class="news-item-title">
-                            <a href="#!">
-                                <h4>UX/ UI dizayn nədir?</h4>
-                            </a>
-                        </div>
-                        <div class="news-item-text">
-                            <p>
-                                Əvvəlcə UX və UI-ın nə olduğuna baxaq. UX dizaynı "istifadəçi təcrübəsi dizaynı"...
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 newsbox">
-                <div class="news-item">
-                    <a href="#" class="news-img">
-                        <img src="https://www.ekaryera.az/adminpage/uploads/1644395117ofismeneceri-vakansiya.png"
-                             alt="">
-                    </a>
-                    <div class="news-info">
-                        <div class="news-day">
-                            <p>07/01/2020</p>
-                        </div>
-                        <div class="news-item-title">
-                            <a href="">
-                                <h4>Necə Ofis meneceri olmaq olar?</h4>
-                            </a>
-                        </div>
-                        <div class="news-item-text">
-                            <p>
-                                Ofis menecerləri bir sıra inzibati, maliyyə və idarəetmə vəzifələri ilə bir ofisin
-                                səmərəli...
-                            </p>
+            @foreach (var item in ViewBag.Posts)
+            {
+                <div class="col-4 newsbox">
+                    <div class="news-item">
+                        <a href="#" class="news-img">
+                            <img src="/Images/TumbnailImage/@item.TumbnailImage" alt="">
+                        </a>
+                        <div class="news-info">
+                            <div class="news-day">
+                                @if (item.CreateDate == item.EditDate)
+                                {
+                                    <p>@item.CreateDate.ToString("dd-MMM-yyyy")</p>
+                                }
+                                else
+                                {
+                                    <p>@item.EditDate.ToString("dd-MMM-yyyy")</p>
+                                }
+                            </div>
+                            <div class="news-item-title">
+                                <a href="#!">
+                                    <h4>@item.Title</h4>
+                                </a>
+                            </div>
+                            <div class="news-item-text">
+                                <p>
+                                    @item.Content.Substring(0, item.Content.Substring(0, 130).LastIndexOf(" "))...
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-4 newsbox">
-                <div class="news-item">
-                    <a href="#!" class="news-img">
-                        <img src="https://www.ekaryera.az/adminpage/uploads/1644394360developerolmaq.jpg" alt="">
-                    </a>
-                    <div class="news-info">
-                        <div class="news-day">
-                            <p>07/01/2020</p>
-                        </div>
-                        <div class="news-item-title">
-                            <a href="">
-                                <h4>Necə Junior Developer olmaq olar?</h4>
-                            </a>
-                        </div>
-                        <div class="news-item-text">
-                            <p>
-                                Bir veb developer olmaq fikriniz varsa, bəzi bacarıqlara sahib olmalısınız.
-                                Seçdiyiniz proqramlaşdır...
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 newsbox">
-                <div class="news-item">
-                    <a href="#" class="news-img">
-                        <img src="https://www.ekaryera.az/adminpage/uploads/1644395117ofismeneceri-vakansiya.png"
-                             alt="">
-                    </a>
-                    <div class="news-info">
-                        <div class="news-day">
-                            <p>07/01/2020</p>
-                        </div>
-                        <div class="news-item-title">
-                            <a href="">
-                                <h4>Necə Ofis meneceri olmaq olar?</h4>
-                            </a>
-                        </div>
-                        <div class="news-item-text">
-                            <p>
-                                Ofis menecerləri bir sıra inzibati, maliyyə və idarəetmə vəzifələri ilə bir ofisin
-                                səmərəli...
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 newsbox">
-                <div class="news-item">
-                    <a href="#!" class="news-img">
-                        <img src="https://www.ekaryera.az/adminpage/uploads/1644394360developerolmaq.jpg" alt="">
-                    </a>
-                    <div class="news-info">
-                        <div class="news-day">
-                            <p>07/01/2020</p>
-                        </div>
-                        <div class="news-item-title">
-                            <a href="">
-                                <h4>Necə Junior Developer olmaq olar?</h4>
-                            </a>
-                        </div>
-                        <div class="news-item-text">
-                            <p>
-                                Bir veb developer olmaq fikriniz varsa, bəzi bacarıqlara sahib olmalısınız.
-                                Seçdiyiniz proqramlaşdır...
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 newsbox">
-                <div class="news-item">
-                    <a href="#" class="news-img">
-                        <img src="https://www.ekaryera.az/adminpage/uploads/1637606288uxdizayn.jpeg" alt="">
-                    </a>
-                    <div class="news-info">
-                        <div class="news-day">
-                            <p>07/01/2020</p>
-                        </div>
-                        <div class="news-item-title">
-                            <a href="#!">
-                                <h4>UX/ UI dizayn nədir?</h4>
-                            </a>
-                        </div>
-                        <div class="news-item-text">
-                            <p>
-                                Əvvəlcə UX və UI-ın nə olduğuna baxaq. UX dizaynı "istifadəçi təcrübəsi dizaynı"...
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            }
+
         </div>
         <div class="row">
             <div class="col-12 d-flex justify-content-center">

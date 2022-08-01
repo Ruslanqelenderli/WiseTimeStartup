@@ -38,6 +38,21 @@ namespace WiseTime.API.Controllers
                 return NotFound();
             }
         }
+
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+
+            var result = await userProjectService.GetById(id);
+            if (result.Result)
+            {
+                return Ok(result.List);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
         [HttpPost]
         public async Task<IActionResult> Create(UserDto dto)
         {

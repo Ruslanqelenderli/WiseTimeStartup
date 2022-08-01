@@ -33,7 +33,20 @@ namespace WiseTime.API.Controllers
                 return NotFound();
             }
         }
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetById(int id)
+        {
 
+            var result = await categoryService.GetById(id);
+            if (result.Result)
+            {
+                return Ok(result.List);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
         [HttpPost]
         public async Task<IActionResult> Create(CategoryDto dto)
         {
@@ -72,11 +85,11 @@ namespace WiseTime.API.Controllers
 
 
 
-        [HttpDelete]
-        public async Task<IActionResult> Delete(CategoryDto dto)
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> Delete(int id)
         {
 
-            var result = await categoryService.Remove(dto);
+            var result = await categoryService.Remove(id);
             if (result.Result)
             {
                 return Ok();

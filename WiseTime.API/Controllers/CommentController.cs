@@ -34,6 +34,21 @@ namespace WiseTime.API.Controllers
             }
         }
 
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetByPostId(int id)
+        {
+
+            var result = await commentService.GetByPostId(id);
+            if (result.Result)
+            {
+                return Ok(result.List);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
         [HttpPost]
         public async Task<IActionResult> Create(CommentDto dto)
         {
@@ -72,11 +87,11 @@ namespace WiseTime.API.Controllers
 
 
 
-        [HttpDelete]
-        public async Task<IActionResult> Delete(CommentDto dto)
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> Delete(int id)
         {
 
-            var result = await commentService.Remove(dto);
+            var result = await commentService.Remove(id);
             if (result.Result)
             {
                 return Ok();
@@ -88,5 +103,7 @@ namespace WiseTime.API.Controllers
 
 
         }
+
+       
     }
 }

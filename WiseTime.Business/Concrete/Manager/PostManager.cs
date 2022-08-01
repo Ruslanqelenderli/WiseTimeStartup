@@ -24,6 +24,7 @@ namespace WiseTime.Business.Concrete.Manager
         public async Task<BusinessReturnResult<PostDto>> Create(PostDto model)
         {
             model.CreateDate = DateTime.Now;
+            model.EditDate =DateTime.Now;
             var data = mapper.Map<Post>(model);
             var returnresult = await postRepository.Create(data);
             var result = mapper.Map<BusinessReturnResult<PostDto>>(returnresult);
@@ -41,6 +42,7 @@ namespace WiseTime.Business.Concrete.Manager
         {
             
             var data = mapper.Map<Post>(model);
+            
             var returnresult = await postRepository.Edit(data);
             var result = mapper.Map<BusinessReturnResult<PostDto>>(returnresult);
             if (returnresult.Result)
@@ -76,20 +78,9 @@ namespace WiseTime.Business.Concrete.Manager
             return result;
         }
 
-        public async Task<BusinessReturnResult<PostDto>> Remove(PostDto model)
-        {
-            var data = mapper.Map<Post>(model);
-            var returnresult = await postRepository.Remove(data);
-            var result = mapper.Map<BusinessReturnResult<PostDto>>(returnresult);
-            if (returnresult.Result)
-            {
+        
 
-                return result;
-            }
-            return result;
-        }
-
-        public async Task<BusinessReturnResult<PostDto>> RemoveById(int id)
+        public async Task<BusinessReturnResult<PostDto>> Remove(int id)
         {
             var data = await postRepository.FindByCondition(x => x.Id == id);
             var returnresult = await postRepository.Remove(data.List.FirstOrDefault());
@@ -101,5 +92,7 @@ namespace WiseTime.Business.Concrete.Manager
             }
             return result;
         }
+
+        
     }
 }

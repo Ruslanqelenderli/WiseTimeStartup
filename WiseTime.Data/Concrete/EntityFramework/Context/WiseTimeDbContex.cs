@@ -30,6 +30,7 @@ namespace WiseTime.Data.Concrete.EntityFramework.Context
 
         public DbSet<Post> Posts { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<AnswerComment> AnswerComments { get; set; }
         public DbSet<Category> Categories { get; set; }
     }
 }

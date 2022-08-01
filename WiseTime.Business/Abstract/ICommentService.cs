@@ -10,5 +10,6 @@ namespace WiseTime.Business.Abstract
 {
     public interface ICommentService:IGenericService<CommentDto,BusinessReturnResult<CommentDto>>
     {
+        Task<BusinessReturnResult<CommentDto>> GetByPostId(int id);
     }
 }

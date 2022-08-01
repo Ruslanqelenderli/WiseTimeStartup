@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WiseTime.UI.Areas.Admin.ViewModels.PostViewModels;
 
 namespace WiseTime.UI.Controllers
 {
@@ -11,14 +12,15 @@ namespace WiseTime.UI.Controllers
     public class HomeController : Controller
     {
         
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var posts = await Api.Api<GetAllPostViewModel>.GetAsync("http://localhost:57630/api/Post/");
+            var trueposts = posts.Where(x => x.Status == true).ToList();
+            ViewBag.Posts = trueposts.TakeLast(6);
+
             return View();
         }
 
-        public IActionResult Blog()
-        {
-            return View();
-        }
+        
     }
 }

@@ -12,7 +12,7 @@ namespace WiseTime.Business.Abstract
         Task<TReturnResult> GetAll();
         Task<TReturnResult> GetById(int id);
 
-        Task<TReturnResult> Remove(TModel model);
+        Task<TReturnResult> Remove(int id);
         Task<TReturnResult> Create(TModel model);
         Task<TReturnResult> Edit(TModel model);
     }

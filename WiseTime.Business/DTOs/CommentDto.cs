@@ -8,7 +8,7 @@ namespace WiseTime.Business.DTOs
 {
     public class CommentDto
     {
-        public string Title { get; set; }
+        public int Id { get; set; }
         public string Content { get; set; }
         public DateTime CreateDate { get; set; }
         public bool Status { get; set; }

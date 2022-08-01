@@ -41,6 +41,10 @@ namespace WiseTime.API
             services.AddScoped<IPostRepository, PostRepository>();
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<ICategoryRepository,CategoryRepository>();
+            services.AddScoped<ICommentRepository,CommentRepository>();
+            services.AddScoped<ICommentService, CommentManager>();
+            services.AddScoped<ICommentReplyRepository, CommentReplyRepository>();
+            services.AddScoped<ICommentReplyService, CommentReplyManager>();
             services.AddDbContext<WiseTimeDbContext>();
             services.ConfigureApplicationCookie(options =>
             {

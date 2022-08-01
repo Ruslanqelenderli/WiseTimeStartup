@@ -1,0 +1,121 @@
+﻿@{
+    Layout = "_Layout";
+}
+@model WiseTime.UI.Areas.Admin.ViewModels.PostViewModels.EditPostViewModel
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.Error
+
+    </div>
+    ViewBag.Error = null;
+}
+<div class="wrapper wrapper-content  animated fadeInRight blog">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5><small> Yeni xəbər əlavə et.</small></h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <form asp-action="Edit" asp-controller="Blog" method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input asp-for="Id" type="hidden" class="form-control">
+                        <!--====== Title input =======-->
+                        <div class="form-group  row">
+                            <div class="col-sm-12">
+                                <label class="col-form-label">Post Başlığı</label>
+                                <input asp-for="Title" type="text" class="form-control">
+                                <span asp-validation-for="Title" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <!--====== Text input =======-->
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group  row">
+                            <div class="col-sm-12">
+                                <label class="col-form-label">Post Məzmunu</label>
+                                <textarea asp-for="Content" class="form-control" cols="30" rows="6"></textarea>
+                                <span asp-validation-for="Content" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <!--====== TumbnailImage input =======-->
+                        <div class="hr-line-dashed"></div>
+                        <div class="custom-file">
+                            <label class="mg-bott">Profil Şəkli</label><br /><br />
+                            <img style=" height: 100px; width: 140px;" src="/Images/TumbnailImage/@Model.TumbnailImage" alt="Alternate Text" />
+                            <input type="file" asp-for="TumbnailImageIFF" id="TumbnailImage" accept="image/*" class="form-control my-2">
+                            <input type="hidden" asp-for="TumbnailImage" id="TumbnailImage" accept="image/*" class="form-control my-2">
+                            <span asp-validation-for="TumbnailImage" class="text-danger"></span>
+                            @Html.ValidationMessage("TumbnailImageNull", "", new { @class = "text-danger" })
+                        </div>
+
+                        <!--====== Image input =======-->
+                        <div class="hr-line-dashed"></div>
+                        <div class="custom-file">
+                            <label class="mg-bott">Post Şəkli</label><br /><br />
+                            <img style=" height: 100px; width: 140px;" src="/Images/Image/@Model.Image" alt="Alternate Text" />
+                            <input asp-for="ImageIFF" type="file" id="Image" accept="image/*" class="form-control my-2">
+                            <input asp-for="Image" type="hidden" id="Image" accept="image/*" class="form-control my-2">
+                            <span asp-validation-for="Image" class="text-danger"></span>
+                            @Html.ValidationMessage("ImageNull", "", new { @class = "text-danger" })
+                        </div>
+
+
+                        <!--====== Checkboxes and radios input =======-->
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group row align-items-baseline">
+                            <label class="col-sm-2 col-form-label">Post Status</label>
+                            <div class="col-sm-3">
+                                <div>
+                                    <label class="mg-bott"> <input asp-for="Status" type="checkbox">Aktivdir</label>
+                                    <br />
+                                    <span class="text-success">Bu düymə bu xəbərin saytda göstərilməsini təmin edir.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--====== Select input =======-->
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <label class="col-form-label">Post Kateqoriya</label>
+                                <select asp-for="CategoryId" class="form-control m-b">
+
+                                    @foreach (var item in ViewBag.Categories)
+                                    {
+                                        if (Model.CategoryId == item.Id)
+                                        {
+                                            <option selected value="@item.Id">@item.Name</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@item.Id">@item.Name</option>
+                                        }
+                                    }
+                                </select>
+                                <span asp-validation-for="CategoryId" class="text-danger"></span>
+                                @Html.ValidationMessage("Category", "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <!--====== Save and Cancel =======-->
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group row">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <button class="btn btn-primary btn-sm" type="submit">Edit Post</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

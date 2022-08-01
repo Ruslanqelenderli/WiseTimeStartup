@@ -71,10 +71,12 @@ namespace WiseTime.Business.Concrete.Manager
             return result;
         }
 
-        public async Task<BusinessReturnResult<CategoryDto>> Remove(CategoryDto model)
+        
+
+        public async Task<BusinessReturnResult<CategoryDto>> Remove(int id)
         {
-            var data = mapper.Map<Category>(model);
-            var returnresult = await categoryRepository.Remove(data);
+            var data = await categoryRepository.FindByCondition(x => x.Id == id);
+            var returnresult = await categoryRepository.Remove(data.List.FirstOrDefault());
             var result = mapper.Map<BusinessReturnResult<CategoryDto>>(returnresult);
             if (returnresult.Result)
             {

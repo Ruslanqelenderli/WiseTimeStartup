@@ -103,15 +103,17 @@ namespace WiseTime.Business.Concrete.Manager
         {
             var result = new BusinessReturnResult<UserDto>();
             var user =await userManager.Users.FirstOrDefaultAsync(x => x.Id == id);
-            var data = mapper.Map<ICollection<UserDto>>(user);
+            var users = new List<User>();
+            users.Add(user);
+            var data = mapper.Map<ICollection<UserDto>>(users);
             result.MainMethod(data, true, "Succeed");
             return result;
         }
 
-        public async Task<BusinessReturnResult<UserDto>> Remove(UserDto model)
+        public async Task<BusinessReturnResult<UserDto>> Remove(int id)
         {
             var returnresult = new BusinessReturnResult<UserDto>();
-            var data = mapper.Map<User>(model);
+            var data = await userManager.FindByIdAsync(id.ToString());
             var result = await userManager.DeleteAsync(data);
             if (result.Succeeded)
             {

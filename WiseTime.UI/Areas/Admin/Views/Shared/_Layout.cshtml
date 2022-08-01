@@ -1,8 +1,7 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<!doctype html>
+<html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,6 +32,15 @@
     <link href="~/Admin/css/animate.css" rel="stylesheet">
     <link href="~/Admin/css/style.css" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp"
+          rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Istok+Web&display=swap" rel="stylesheet">
+
+    <!--== CSS fayls  ==-->
+    <link rel="stylesheet" href="~/Admin/css/blogdetails.css">
+
 </head>
 
 <body>
@@ -61,13 +69,15 @@
                             <i class="fa fa-edit"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span>
                         </a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="/Admin/Blog/Add">Blog</a></li>
+                            <li><a href="/Admin/Category/Add">Kateqoriya</a></li>
                         </ul>
                     </li>
                 </ul>
+
             </div>
         </nav>
-        <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div id="page-wrapper" class="gray-bg">
             <div class="row border-bottom">
                 <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
                     <div class="navbar-header">
@@ -197,7 +207,6 @@
             @RenderBody()
         </div>
     </div>
-
     <!-- Mainly scripts -->
     <script src="~/Admin/js/jquery-3.1.1.min.js"></script>
     <script src="~/Admin/js/popper.min.js"></script>
@@ -219,7 +228,6 @@
     <script src="~/Admin/js/demo/peity-demo.js"></script>
 
     <!-- Custom and plugin javascript -->
-    <!-- <script src="~/Admin/js/inspinia.js"></script> -->
     <script src="~/Admin/js/plugins/pace/pace.min.js"></script>
 
     <!-- jQuery UI -->
@@ -362,5 +370,3 @@
 
     </script>
 </body>
-
-</html>
