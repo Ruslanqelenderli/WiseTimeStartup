@@ -23,3 +23,28 @@
   color: #2c7ae7;
 }
 /* crumbs section end  */
+
+/* exam crumbs start*/
+#exam_crumbs {
+  background-color: #efefef;
+}
+.crumbs-item {
+  width: 100%;
+  padding: 15px 0;
+}
+.exam-crumbs-info {
+  font-size: 14px;
+  margin: 0 30px;
+}
+.exam-crumbs-home a,.exam-crumbs-about  {
+  color: #e74c3c;
+  font-weight: 600;
+}
+.exam-crumbs-home a:hover {
+  text-decoration: underline;
+}
+.exam-crumbs-info i {
+  color: #797980;
+  padding: 0px 7px;
+}
+/* exam crumbs start*/

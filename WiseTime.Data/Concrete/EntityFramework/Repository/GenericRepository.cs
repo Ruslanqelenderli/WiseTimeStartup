@@ -13,7 +13,7 @@ namespace WiseTime.Data.Concrete.EntityFramework.Repository
 {
     public class GenericRepository<TModel, TReturnResult, TContext> : IGenericRepository<TModel, TReturnResult>
         where TModel : class
-        where TReturnResult:GetAllReturnResult<TModel>,new()
+        where TReturnResult:DataReturnResult<TModel>,new()
         where TContext : DbContext, new()
     {
         public async Task<TReturnResult> Create(TModel model)

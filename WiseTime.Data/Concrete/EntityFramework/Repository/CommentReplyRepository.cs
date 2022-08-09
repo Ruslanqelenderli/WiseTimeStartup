@@ -10,7 +10,7 @@ using WiseTime.Entity.Entities;
 
 namespace WiseTime.Data.Concrete.EntityFramework.Repository
 {
-    public class CommentReplyRepository:GenericRepository<AnswerComment,GetAllReturnResult<AnswerComment>,WiseTimeDbContext>,ICommentReplyRepository
+    public class CommentReplyRepository:GenericRepository<AnswerComment,DataReturnResult<AnswerComment>,WiseTimeDbContext>,ICommentReplyRepository
     {
     }
 }

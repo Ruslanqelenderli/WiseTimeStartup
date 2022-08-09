@@ -188,44 +188,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="blog-form">
-                        <div class="row">
-                            <div class="col-12">
-                                <h3 style="margin-bottom: 2rem;">Şərhinizi əlavə edin</h3>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <form action="#" class="contact-form">
-                                    <div class="row ">
-                                        <div class="col-6">
-                                            
-                                        </div>
-                                        <div class="col-6">
-                                           
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <textarea cols="30" rows="8" placeholder="Şərh"
-                                                      class="textarea"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12 d-flex justify-content-start">
-                                            <div class="bttn-row " style="margin-top:20px;">
-                                                <a href="/">
-                                                    <div class="bttn">
-                                                        <span>Şərh əlavə et</span>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                    @await Html.PartialAsync("AddPartial",Model.Id)
                 </div>
             </div>
 

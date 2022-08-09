@@ -8,7 +8,7 @@ using WiseTime.Entity.Entities;
 
 namespace WiseTime.Data.Abstract
 {
-    public interface ICategoryRepository:IGenericRepository<Category,GetAllReturnResult<Category>>
+    public interface ICategoryRepository:IGenericRepository<Category,DataReturnResult<Category>>
     {
     }
 }

@@ -8,7 +8,7 @@ using WiseTime.Entity.Entities.Manage;
 
 namespace WiseTime.Data.Abstract
 {
-    public interface IUserRepository:IGenericRepository<User,GetAllReturnResult<User>>
+    public interface IUserRepository:IGenericRepository<User,DataReturnResult<User>>
     {
     }
 }

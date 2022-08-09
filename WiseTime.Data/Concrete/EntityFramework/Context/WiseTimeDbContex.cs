@@ -32,5 +32,8 @@ namespace WiseTime.Data.Concrete.EntityFramework.Context
         public DbSet<Comment> Comments { get; set; }
         public DbSet<AnswerComment> AnswerComments { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Exam> Exams { get; set; }
+        public DbSet<ExamType> ExamTypes { get; set; }
+        public DbSet<Question> Questions { get; set; }
     }
 }

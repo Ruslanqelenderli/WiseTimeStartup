@@ -8,7 +8,7 @@ using WiseTime.Entity.Entities;
 
 namespace WiseTime.Data.Abstract
 {
-    public interface ICommentRepository:IGenericRepository<Comment,GetAllReturnResult<Comment>>
+    public interface ICommentRepository:IGenericRepository<Comment,DataReturnResult<Comment>>
     {
     }
 }

@@ -205,7 +205,7 @@ ul {
   top: 50px;
   background-color: #fff;
   box-shadow: 0.125rem 0.25rem 1.25rem 0.0875rem rgb(45 45 45 / 13%);
-  border-radius: 6px;
+  /* border-radius: 6px; */
   opacity: 0;
   visibility: hidden;
   transition: top 0.3s;
@@ -214,18 +214,35 @@ ul {
   -ms-transition: top 0.3s;
   -o-transition: top 0.3s;
 }
-.meniu-nav ul .profile-ul{
+
+.meniu-nav ul .profile-ul {
   left: 76%;
   right: 0;
 }
-.meniu-nav ul .profile-ul li{
+
+.meniu-nav ul .profile-ul li {
   width: 160px;
+}
+
+
+.teacher-exam {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(30px, auto);
+}
+
+.meniu-nav ul ul .ul-exam{
+  left: 160px;
+}
+.meniu-nav ul li:hover>.ul-exam{
+  top: 7px;
+  left: 160px;
 }
 
 .meniu-nav ul ul li {
   position: relative;
   margin: 0;
-  width: 150px;
+  width: 170px;
   padding: 0 1.5625rem;
   height: 35px;
   float: none;
@@ -268,11 +285,12 @@ ul {
   transition: all 0.5s ease;
 }
 
+
 .menu-list-to {
   position: relative;
   display: flex;
-  align-items: baseline;
-  color: black;
+  align-items: center;
+  color: #303036;
   text-align: center;
   text-decoration: none;
   overflow: hidden;
@@ -282,15 +300,41 @@ ul {
   transform: translateY(100%);
 }
 
+
+
+.menu-list-to i {
+  color: #2c7ae7;
+  transition: all 0.5s ease;
+}
+.menu-list-to:hover>i {
+  transform: rotateX(180deg);
+}
+
+
+
+.addition i {
+  color: #2c7ae7;
+  transition: all 0.5s ease;
+}
+.addition:hover>i {
+  transform: rotateY(180deg);
+}
+
 .menu-profil {
-  color: black;
+  color: #303036;
   font-size: 17px;
+  align-items: baseline;
 }
 
 .menu-profil i {
   font-size: 15px;
   margin-left: 5px;
   color: #303036;
+  transform: rotateX(0deg);
+}
+
+.menu-profil:hover>i{
+  transform: rotateX(0deg);
 }
 
 .menu-search {
@@ -308,7 +352,7 @@ ul {
   width: 1.375rem;
   height: 1.375rem;
   font-weight: 100;
-  color: black;
+  color: #303036;
   margin-left: 4px;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;

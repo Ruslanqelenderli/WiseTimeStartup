@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WiseTime.Data.Concrete.EntityFramework.ReturnResult
 {
-    public class GetAllReturnResult<T>
+    public class DataReturnResult<T>
     {
         
         public ICollection<T> List { get; set; }

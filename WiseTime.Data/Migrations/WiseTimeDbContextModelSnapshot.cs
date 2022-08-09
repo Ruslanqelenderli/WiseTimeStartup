@@ -211,6 +211,56 @@ namespace WiseTime.Data.Migrations
                     b.ToTable("Comments");
                 });
 
+            modelBuilder.Entity("WiseTime.Entity.Entities.Exam", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Exams");
+                });
+
+            modelBuilder.Entity("WiseTime.Entity.Entities.ExamType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ExamId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ExamId");
+
+                    b.ToTable("ExamTypes");
+                });
+
             modelBuilder.Entity("WiseTime.Entity.Entities.Manage.Role", b =>
                 {
                     b.Property<int>("Id")
@@ -374,6 +424,56 @@ namespace WiseTime.Data.Migrations
                     b.ToTable("Posts");
                 });
 
+            modelBuilder.Entity("WiseTime.Entity.Entities.Question", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CorrectOption")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ExamTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OptionA")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OptionB")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OptionC")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OptionD")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OptionE")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Point")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ExamTypeId");
+
+                    b.ToTable("Questions");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("WiseTime.Entity.Entities.Manage.Role", null)
@@ -471,6 +571,17 @@ namespace WiseTime.Data.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("WiseTime.Entity.Entities.ExamType", b =>
+                {
+                    b.HasOne("WiseTime.Entity.Entities.Exam", "Exam")
+                        .WithMany("ExamTypes")
+                        .HasForeignKey("ExamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Exam");
+                });
+
             modelBuilder.Entity("WiseTime.Entity.Entities.Post", b =>
                 {
                     b.HasOne("WiseTime.Entity.Entities.Category", "Category")
@@ -490,9 +601,30 @@ namespace WiseTime.Data.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("WiseTime.Entity.Entities.Question", b =>
+                {
+                    b.HasOne("WiseTime.Entity.Entities.ExamType", "ExamType")
+                        .WithMany("Questions")
+                        .HasForeignKey("ExamTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ExamType");
+                });
+
             modelBuilder.Entity("WiseTime.Entity.Entities.Category", b =>
                 {
                     b.Navigation("Posts");
+                });
+
+            modelBuilder.Entity("WiseTime.Entity.Entities.Exam", b =>
+                {
+                    b.Navigation("ExamTypes");
+                });
+
+            modelBuilder.Entity("WiseTime.Entity.Entities.ExamType", b =>
+                {
+                    b.Navigation("Questions");
                 });
 
             modelBuilder.Entity("WiseTime.Entity.Entities.Manage.User", b =>

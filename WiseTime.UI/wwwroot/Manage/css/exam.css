@@ -1,0 +1,248 @@
+body {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+#region-main {
+    width: calc(100% - 270px);
+    padding: 15px;
+}
+
+#exam-navigation {
+    height: 100vh;
+    width: 270px;
+}
+
+#exam-sextion {
+    display: flex;
+}
+
+.multichoice {
+    display: flex;
+}
+
+.answer .info {
+    width: 7em;
+    height: 100%;
+    padding: 0.5em;
+    margin: 0;
+    margin-bottom: 1.8em;
+    background-color: #eee;
+    border: 1px solid #dcdcdc;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 4px;
+}
+
+.answer .info .no {
+    padding: 0 0 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #94999b;
+}
+
+.answer .no {
+    margin: 0;
+    font-size: .8em;
+    line-height: 1;
+}
+
+.answer .info>div {
+    font-size: .7em;
+    margin-top: 0.7em;
+}
+
+
+.answer-item {
+    width: 87%;
+}
+
+.quetsion-content{
+    display: flex;
+    width: 100%;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #333;
+    margin-left: 1.3rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+
+.answer .qtext {
+    margin: 0 0 0;
+    font-size: 14px;
+    line-height: 23px;
+    font-weight: 400;
+    text-transform: none;
+    color: #35464b;
+    clear: both;
+}
+
+.answer .qtext {
+    clear: none !important;
+}
+
+.answer .qtext {
+    margin-bottom: 1.5em;
+}
+
+.exam-content {
+    font-size: 14px;
+    margin-right: 15px;
+}
+
+.answer-image {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.answer-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.hr {
+    margin: 30px 0;
+}
+
+.r0 {
+    padding: 0.3em 0 0.3em 25px;
+}
+
+
+/* ========================================== */
+
+
+
+.nav-header {
+    padding: 12px 0;
+    background: #27293D;
+}
+
+.nav-h2 {
+    color: #FFFFFF;
+    text-shadow: none;
+    padding-bottom: 0;
+    padding: 3px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.nav-content {
+    color: #333;
+    padding: 18px 12px;
+}
+
+.answer-btn {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
+    grid-column-gap: 7px;
+    grid-row-gap: 7px;
+}
+
+.qnbutton {
+    width: 38px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border: 3px solid #333;
+    border-radius: 3px;
+    color: #333;
+    text-decoration: none;
+    transition: ease-in .1s;
+}
+
+.qnbutton:hover {
+    text-decoration: none;
+    color: rgb(38, 151, 226);
+    background-color: #14181a;
+    border: 3px solid rgb(38, 151, 226);
+    transition: ease-in .1s;
+}
+
+.finish-btn,
+.btn-submit,
+.btn-submit input {
+    line-height: 36px;
+    height: 36px;
+    background: #e74c3c;
+    border: 1px solid #4c5f65;
+    margin: 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.finish-btn{
+    padding: 4px 10px;
+}
+
+.finish-btn a,
+.btn-submit input {
+    color: #333;
+    font-weight: 600;
+
+}
+
+.finish-btn:hover, .btn-submit input:hover {
+    cursor: pointer;
+    background-color: #ff0808d0;
+}
+
+.btn-submit input {
+    border-right: 0;
+    border-left: 0;
+    width: 100%;
+}
+
+.clock_area{
+    margin-right: 15px;
+    padding:15px 7px;
+    border-radius: 50%;
+    border: 2px dashed blue;
+}
+
+
+
+
+
+/* ======== Exam Summery style =============*/
+
+
+
+.summ-h2, .summ-h3{
+    font-weight: 700;
+    padding: 10px 0;
+}
+
+.summ-h2{
+    font-size: 28px;
+}
+
+.summ-h3{
+    font-size: 24px;
+}
+
+.bttns{
+    display: flex;
+    justify-content:space-evenly;
+}
+
+.table{
+    font-size: 14px;
+}
+/* ======== Exam Summery style end =============*/
+
+.mt-left-top{
+    margin-left: 1.3rem;
+    margin-top:3rem;
+    font-size: 14px;
+}
+
+/* ======== Exam Review style =============*/

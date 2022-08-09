@@ -10,7 +10,7 @@ using WiseTime.Entity.Entities;
 
 namespace WiseTime.Data.Concrete.EntityFramework.Repository
 {
-    public class CategoryRepository:GenericRepository<Category,GetAllReturnResult<Category>,WiseTimeDbContext>,ICategoryRepository
+    public class CategoryRepository:GenericRepository<Category,DataReturnResult<Category>,WiseTimeDbContext>,ICategoryRepository
     {
     }
 }

@@ -455,3 +455,10 @@ C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Raz
 C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Blog\Edit.cshtml.g.cs
 C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Add.cshtml.g.cs
 C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Edit.cshtml.g.cs
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\AddPartial.cshtml.g.cs
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Exam\Add.cshtml.g.cs
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Exam\Edit.cshtml.g.cs
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\ExamType\Add.cshtml.g.cs
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\ExamType\Edit.cshtml.g.cs
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Question\Add.cshtml.g.cs
+C:\Users\Ruslan-PC\source\repos\WiseTimeProject\WiseTime.UI\obj\Debug\net5.0\Razor\Areas\Admin\Views\Question\Edit.cshtml.g.cs

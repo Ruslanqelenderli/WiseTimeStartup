@@ -1,0 +1,172 @@
+﻿@{
+    Layout = "_Layout";
+}
+@model WiseTime.UI.Areas.Admin.ViewModels.ExamTypeViewModels.ExamTypeAddViewModel
+
+@if (TempData["Added"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Added"]
+
+    </div>
+    TempData["Added"] = null;
+}
+
+else if (TempData["AddedError"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["AddedError"]
+
+    </div>
+    TempData["AddedError"] = null;
+}
+
+else if (TempData["Deleted"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Deleted"]
+
+    </div>
+    TempData["Deleted"] = null;
+}
+else if (TempData["DeletedError"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["DeletedError"]
+
+    </div>
+    TempData["DeletedError"] = null;
+}
+
+
+
+<div class="wrapper wrapper-content  animated fadeInRight blog">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5><small>@ViewBag.ExamName üçün imtahan növü əlavə et.</small></h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <form asp-action="Add" asp-controller="ExamType" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input asp-for="ExamId" type="hidden" value="@TempData["ExamId"]" class="form-control">
+                        <!--====== Title input =======-->
+                        <div class="form-group  row">
+                            <div class="col-sm-12">
+                                <label class="col-form-label">Imtahan növü  Adı</label>
+                                <input asp-for="Name" type="text" class="form-control">
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <!--====== Text input =======-->
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group  row">
+                            <div class="col-sm-12">
+                                <label class="col-form-label">Imtahan növü Məzmunu</label>
+                                <textarea asp-for="Description" class="form-control" cols="30" rows="6"></textarea>
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+
+
+                        <!--====== Checkboxes and radios input =======-->
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group row align-items-baseline">
+                            <label class="col-sm-2 col-form-label">Imtahan növü Statusu</label>
+                            <div class="col-sm-3">
+                                <div>
+                                    <label class="mg-bott"> <input asp-for="Status" type="checkbox">Aktivdir</label>
+                                    <br />
+                                    <span class="text-success">Bu düymə bu imtahan növünün saytda göstərilməsini təmin edir.</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--====== Save and Cancel =======-->
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group row">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <button class="btn btn-primary btn-sm" type="submit">Yadda saxla</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>İmtahanlar</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <table class="footable table table-stripped toggle-arrow-tiny">
+                        <thead>
+                            <tr>
+                                <th data-toggle="true">Ad</th>
+                                <th>Məzmun</th>
+                                <th>Status</th>
+                                <th>Əməliyyatlar</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in ViewBag.ExamTypes)
+                            {
+                                <tr>
+                                    <td>@item.Name</td>
+                                    <td>@item.Description</td>
+                                    <td>@item.Status</td>
+
+
+                                    <td class="d-flex justify-content-between">
+                                        <a href="/Admin/ExamType/Remove/@item.Id" onclick="return confirm('.Silmək istəyirsiniz?');" class="mr-3">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                        <a href="/Admin/ExamType/Edit/@item.Id" class="mr-3">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                        <a href="/Admin/Question/Add/@item.Id" class="#!">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+
+
+                                    </td>
+
+                                </tr>
+                            }
+
+
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5">
+                                    <ul class="pagination float-right"></ul>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

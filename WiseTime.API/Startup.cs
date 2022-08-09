@@ -12,8 +12,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WiseTime.Business.Abstract;
+using WiseTime.Business.Abstract.ExamServices;
 using WiseTime.Business.AutoMapper;
 using WiseTime.Business.Concrete.Manager;
+using WiseTime.Business.Concrete.Manager.ExamManagers;
 using WiseTime.Data.Abstract;
 using WiseTime.Data.Concrete.EntityFramework.Context;
 using WiseTime.Data.Concrete.EntityFramework.Repository;
@@ -44,7 +46,13 @@ namespace WiseTime.API
             services.AddScoped<ICommentRepository,CommentRepository>();
             services.AddScoped<ICommentService, CommentManager>();
             services.AddScoped<ICommentReplyRepository, CommentReplyRepository>();
+            services.AddScoped<IQuestionRepository, QuestionRepository>();
+            services.AddScoped<IExamRepository, ExamRepository>();
+            services.AddScoped<IExamTypeRepository, ExamTypeRepository>();
             services.AddScoped<ICommentReplyService, CommentReplyManager>();
+            services.AddScoped<IExamService, ExamManager>();
+            services.AddScoped<IExamTypeService, ExamTypeManager>();
+            services.AddScoped<IQuestionService, QuestionManager>();
             services.AddDbContext<WiseTimeDbContext>();
             services.ConfigureApplicationCookie(options =>
             {

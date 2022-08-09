@@ -23,7 +23,9 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Comment\" />
     <Folder Include="wwwroot\Images\Image\" />
+    <Folder Include="wwwroot\Images\QuestionImage\" />
     <Folder Include="wwwroot\Images\TumbnailImage\" />
   </ItemGroup>
 

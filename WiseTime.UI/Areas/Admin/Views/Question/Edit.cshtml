@@ -1,0 +1,169 @@
+﻿@{
+    Layout = "_Layout";
+}
+@model WiseTime.UI.Areas.Admin.ViewModels.QuestionViewModels.QuestionImageEditViewModel
+
+@if (TempData["Update"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Update"]
+
+    </div>
+    TempData["Update"] = null;
+}
+else if (TempData["UpdateError"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["UpdateError"]
+
+    </div>
+    TempData["UpdateError"] = null;
+}
+
+<div class="wrapper wrapper-content  animated fadeInRight blog">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5><small> Suala dəyişiklik et.</small></h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <form asp-action="Edit" asp-controller="Question" method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <input asp-for="Id" type="hidden" class=" form-control">
+                        <input asp-for="ExamTypeId" type="hidden" class=" form-control">
+                        <input type="hidden" asp-for="Image"  class="form-control my-2">
+                        <!--====== Title input =======-->
+                        <div class="form-group  row">
+                            <div class="col-sm-12">
+                                <label class="col-form-label">Sual</label>
+                                <input asp-for="Title" type="text" class="form-control">
+                                <span asp-validation-for="Title" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group  row">
+                            <div class="col-sm-12">
+                                <label class="col-form-label">A variantı</label>
+                                <input asp-for="OptionA" type="text" class="form-control">
+                                <span asp-validation-for="OptionA" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group  row">
+                            <div class="col-sm-12">
+                                <label class="col-form-label">B variantı</label>
+                                <input asp-for="OptionB" type="text" class="form-control">
+                                <span asp-validation-for="OptionB" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group  row">
+                            <div class="col-sm-12">
+                                <label class="col-form-label">C variantı</label>
+                                <input asp-for="OptionC" type="text" class="form-control">
+                                <span asp-validation-for="OptionC" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group  row">
+                            <div class="col-sm-12">
+                                <label class="col-form-label">D variantı</label>
+                                <input asp-for="OptionD" type="text" class="form-control">
+                                <span asp-validation-for="OptionD" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group  row">
+                            <div class="col-sm-12">
+                                <label class="col-form-label">E variantı</label>
+                                <input asp-for="OptionE" type="text" class="form-control">
+                                <span asp-validation-for="OptionE" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group  row">
+                            <div class="col-sm-12">
+                                <label class="col-form-label">Düzgün cavab</label>
+                                <select asp-for="CorrectOption" name="CorrectOption" class="form-control">
+                                    @{
+                                        var options = TempData["Options"] as IEnumerable<string>;
+                                    }
+                                    @foreach (var option in options)
+                                    {
+                                        if (Model.CorrectOption == option)
+                                        {
+                                            <option selected value="@option">@option</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@option">@option</option>
+                                        }
+
+                                    }
+                                </select>
+                                <span asp-validation-for="CorrectOption" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group  row">
+                            <div class="col-sm-12">
+                                <label class="col-form-label">Sualın balı</label>
+                                <input asp-for="Point" type="number" class="form-control">
+                                <span asp-validation-for="Point" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="hr-line-dashed"></div>
+                        <div class="custom-file">
+                            <label class="mg-bott">Sualın Şəkli</label>
+                            <br />
+                            <br />
+                            @if (@Model.Image != null)
+                            {
+                                <img style=" height: 100px; width: 140px;" src="/Images/QuestionImage/@Model.Image" alt="Alternate Text" />
+                            }
+                            <input asp-for="ImageName" type="file" id="Image" accept="image/*" class="form-control my-2">
+
+                            <span asp-validation-for="Image" class="text-danger"></span>
+
+                        </div>
+                        <!--====== Text input =======-->
+                        <!--====== Checkboxes and radios input =======-->
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group row align-items-baseline">
+                            <label class="col-sm-2 col-form-label">Sualın Statusu</label>
+                            <div class="col-sm-3">
+                                <div>
+                                    <label class="mg-bott"> <input asp-for="Status" type="checkbox">Aktivdir</label>
+                                    <br />
+                                    <span class="text-success">Bu düymə bu sualın saytda göstərilməsini təmin edir.</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--====== Save and Cancel =======-->
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group row">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <button class="btn btn-primary btn-sm" type="submit">Yadda saxla</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
