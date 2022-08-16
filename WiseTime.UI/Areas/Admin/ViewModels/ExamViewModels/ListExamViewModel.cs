@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WiseTime.UI.Areas.Admin.ViewModels.ExamTypeViewModels;
 
 namespace WiseTime.UI.Areas.Admin.ViewModels.ExamViewModels
 {
@@ -12,5 +13,6 @@ namespace WiseTime.UI.Areas.Admin.ViewModels.ExamViewModels
         public string Description { get; set; }
         public bool Status { get; set; }
         public DateTime CreateDate { get; set; }
+        public ICollection<ExamTypeListViewModel> ExamTypes { get; set; }
     }
 }

@@ -1,0 +1,199 @@
+﻿@{
+    Layout = "_LayoutTest";
+}
+@model List<WiseTime.UI.Areas.Admin.ViewModels.QuestionViewModels.QuestionListViewModel>
+<section id="exam-sextion">
+    <aside id="exam-navigation">
+        <div class="navigation">
+            <div class="nav-header">
+                <div class="title">
+                    <h2 class="nav-h2">
+                        <span>Quiz navigation</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="nav-content">
+                <div class="answer-btn">
+                    @{
+                        int i = 1;
+                    }
+                    @foreach (var item in Model)
+                    {
+
+                        <a class="qnbutton" href="#1">
+                            <span class="answer-num">@i</span>
+                        </a>
+                        i++;
+                    }
+
+
+
+
+                </div>
+                <div class="finish-btn">
+                    <a href="./exam-summary.html">
+                        <span>Finish attempt ...</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <main id="region-main">
+        @foreach (var item in Model)
+        {
+            <div class="answer" id="#1">
+                <div class="multichoice">
+
+                    <div class="answer-item">
+                        <div class="quetsion-content">
+                            <div class="exam-content">
+                                <div class="qtext">
+                                    @item.Title
+                                </div>
+                                <div class="ablock">
+                                    <div class="prompt">Seçin:</div>
+                                    <div class="answer-quet">
+                                        <div class="r0 ">
+                                            <input type="radio" name="@item.Id" value="A" id="@item.Id" />
+                                            <label for="@item.OptionA">
+                                                A. @item.OptionA
+                                            </label>
+                                        </div>
+                                        <div class="r0">
+                                            <input type="radio" name="@item.Id" value="B" id="@item.Id" />
+                                            <label for="@item.OptionB">
+                                                B. @item.OptionB
+                                            </label>
+                                        </div>
+                                        <div class="r0">
+                                            <input type="radio" name="@item.Id" value="C" id="@item.Id" />
+                                            <label for="@item.OptionC">
+                                                C. @item.OptionC
+                                            </label>
+                                        </div>
+                                        <div class="r0">
+                                            <input type="radio" name="@item.Id" value="D" id="@item.Id" />
+                                            <label for="@item.OptionD">
+                                                D. @item.OptionD
+                                            </label>
+                                        </div>
+                                        <div class="r0">
+                                            <input type="radio" name="@item.Id" value="E" id="@item.Id" />
+                                            <label for="@item.OptionE">
+                                                E. @item.OptionE
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="answer-image">
+                                @if (item.Image != null)
+                                {
+                                    <img src="~/Images/Image/@item.Image"
+                                         alt="answer1" srcset="" />
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hr">
+                    <hr />
+                </div>
+            </div>
+
+        }
+        <form asp-action="Result" asp-controller="Test" method="post">
+            <div class="btn-submit">
+                <input  type="hidden" id="examresult" name="Result"  />
+                <input id="finishbutton" onclick="check()" type="submit" value="Finish attempt ..." />
+            </div>
+        </form>
+
+
+
+    </main>
+</section>
+@section scripts{
+
+    <script>
+
+    var check = function () {
+        var point = 0;
+
+    var json = '@Html.Raw(Json.Serialize(Model))';
+    var models = JSON.parse(json);
+    var array = Object.keys(models)
+        .map(function (key) {
+            return models[key];
+        });
+
+
+        var ctvariant = 0;
+        var fvariant = 0;
+
+        for (var i in array) {
+            var string = String(array[i].id);
+
+            if (document.getElementById(string).checked == true) {
+                if (document.getElementById(string).value == array[i].correctOption) {
+                    point += array[i].point;
+                    ctvariant++;
+                }
+                else {
+                    fvariant++;
+                }
+            }
+
+        }
+
+        let obj = {
+
+            Point:Number(point),
+            CorrectVariant: Number(ctvariant),
+            FalseVariant: Number(fvariant)
+
+        }
+
+        document.getElementById("examresult").value = JSON.stringify(obj);
+
+
+        //$.ajax({
+        //    type: "post",
+        //    url: "/Test/Result",
+        //    data: JSON.stringify(object),
+        //    contentType: "application/json; charset=utf-8",
+        //    dataType: "json",
+        //    success: function () {
+
+        //        console.log(data);
+        //        alert("Imtahan bitdi.");
+        //    }
+        //})
+
+        //$.ajax({
+        //    type: 'POST',
+        //    url: '/Test/Result',
+        //    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        //    data: obj,
+        //    dataType:'html',
+        //    success: function (result) {
+        //        alert('successfully received data ');
+        //        console.log(result);
+        //    },
+        //    error: function () {
+        //        alert('Failed to receive the Data');
+        //        console.log('Failed ');
+        //    }
+        //})
+
+    }
+
+
+
+
+
+
+    </script>
+}
+

@@ -33,6 +33,21 @@ namespace WiseTime.API.Controllers
                 return NotFound();
             }
         }
+
+        [HttpGet("GetAll")]
+        public async Task<IActionResult> GetAllInclude()
+        {
+
+            var result = await examService.GetAllInclude();
+            if (result.Result)
+            {
+                return Ok(result.List);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetById(int id)
         {

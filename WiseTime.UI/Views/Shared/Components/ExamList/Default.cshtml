@@ -1,0 +1,31 @@
+﻿@model List<WiseTime.UI.Areas.Admin.ViewModels.ExamViewModels.ListExamViewModel>
+<li>
+    <a href="#!" class="menu-list-to" data-title="Imtahan">
+        <span data-title="Imtahan">Imtahan</span>
+        <i class="material-icons">expand_more</i>
+    </a>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                <a href="#!" class="menu-list-to addition" data-title="Bakalavr">
+                    <span data-title="Bakalavr">@item.Name</span>
+                    <i class="material-icons">chevron_right</i>
+                </a>
+                <ul class="ul-exam">
+                    @foreach (var examtype in item.ExamTypes)
+                    {
+                        <li>
+                            <a href="/Test/Index/@examtype.Id" class="menu-list-to" data-title="@examtype.Name">
+                                <span data-title="@examtype.Name">@examtype.Name</span>
+                            </a>
+                        </li>
+                    }
+
+
+                </ul>
+            </li>
+        }
+
+    </ul>
+</li>

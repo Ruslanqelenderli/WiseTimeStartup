@@ -10,5 +10,6 @@ namespace WiseTime.Business.Abstract.ExamServices
 {
     public interface IQuestionService:IGenericService<QuestionDto,BusinessReturnResult<QuestionDto>>
     {
+        Task<BusinessReturnResult<QuestionDto>> GetByExamTypeId(int id);
     }
 }

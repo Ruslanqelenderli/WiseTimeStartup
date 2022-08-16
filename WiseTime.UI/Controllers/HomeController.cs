@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WiseTime.UI.Areas.Admin.ViewModels.ExamViewModels;
 using WiseTime.UI.Areas.Admin.ViewModels.PostViewModels;
 
 namespace WiseTime.UI.Controllers
@@ -20,7 +21,7 @@ namespace WiseTime.UI.Controllers
 
             return View();
         }
+       
 
-        
     }
 }

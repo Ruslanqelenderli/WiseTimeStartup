@@ -65,6 +65,18 @@ namespace WiseTime.Business.Concrete.Manager
             return result;
         }
 
+        public async Task<BusinessReturnResult<ExamDto>> GetAllInclude()
+        {
+            var returnresult = await examRepository.GetAllInclude();
+            var result = mapper.Map<BusinessReturnResult<ExamDto>>(returnresult);
+            if (returnresult.Result)
+            {
+
+                return result;
+            }
+            return result;
+        }
+
         public async Task<BusinessReturnResult<ExamDto>> GetById(int id)
         {
             var returnresult = await examRepository.FindByCondition(x => x.Id == id);

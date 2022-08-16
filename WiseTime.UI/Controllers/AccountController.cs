@@ -22,6 +22,7 @@ namespace WiseTime.UI.Controllers
         private readonly UserManager<User> userManager;
         private readonly IUserProjectService userprojectService;
         private readonly IMapper mapper;
+
         public AccountController(SignInManager<User> signInManager, IMapper mapper, UserManager<User> userManager, IUserProjectService userprojectService)
         {
             this.signInManager = signInManager;

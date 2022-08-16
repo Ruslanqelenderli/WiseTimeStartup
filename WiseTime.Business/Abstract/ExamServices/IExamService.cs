@@ -10,5 +10,6 @@ namespace WiseTime.Business.Abstract
 {
     public interface IExamService:IGenericService<ExamDto,BusinessReturnResult<ExamDto>>
     {
+        Task<BusinessReturnResult<ExamDto>> GetAllInclude();
     }
 }

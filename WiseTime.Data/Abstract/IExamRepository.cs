@@ -10,5 +10,6 @@ namespace WiseTime.Data.Abstract
 {
     public interface IExamRepository:IGenericRepository<Exam,DataReturnResult<Exam>>
     {
+        Task<DataReturnResult<Exam>> GetAllInclude();
     }
 }

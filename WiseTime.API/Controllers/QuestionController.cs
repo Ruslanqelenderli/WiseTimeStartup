@@ -48,6 +48,20 @@ namespace WiseTime.API.Controllers
             }
         }
 
+        [HttpGet("GetByExamTypeId/{id:int}")]
+        public async Task<IActionResult> GetByExamTypeId(int id)
+        {
+
+            var result = await questionService.GetByExamTypeId(id);
+            if (result.Result)
+            {
+                return Ok(result.List);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
         [HttpPost]
         public async Task<IActionResult> Create(QuestionDto dto)
         {

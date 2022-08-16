@@ -13,5 +13,6 @@ namespace WiseTime.Business.DTOs.ExamDtos
         public string Description { get; set; }
         public bool Status { get; set; }
         public DateTime CreateDate { get; set; }
+        public ICollection<ExamTypeDto> ExamTypes { get; set; }
     }
 }

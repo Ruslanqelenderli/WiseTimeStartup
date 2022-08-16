@@ -19,6 +19,7 @@ namespace WiseTime.UI.Areas.Admin.ViewModels.QuestionViewModels
         public decimal Point { get; set; }
         public int ExamTypeId { get; set; }
         public string Image { get; set; }
+        public string Result { get; set; }
         public DateTime CreateDate { get; set; }
     }
 }

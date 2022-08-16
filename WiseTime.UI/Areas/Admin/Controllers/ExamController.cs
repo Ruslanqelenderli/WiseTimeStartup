@@ -136,5 +136,7 @@ namespace WiseTime.UI.Areas.Admin.Controllers
             ViewBag.UpdatedError = "Xəta! Dəyişiklər qeydə alınmadı.";
             return View();
         }
+
+        
     }
 }

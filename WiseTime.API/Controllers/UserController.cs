@@ -53,6 +53,7 @@ namespace WiseTime.API.Controllers
                 return NotFound();
             }
         }
+        
         [HttpPost]
         public async Task<IActionResult> Create(UserDto dto)
         {
